@@ -17,7 +17,7 @@ export default function ProjectModal({ project, onClose }) {
     <div
       onClick={onClose}
       style={{
-        position: "fixed",
+        position: "absolute",
         inset: 0,
         zIndex: 60,
         background: "rgba(0,0,0,0.55)",
@@ -28,14 +28,18 @@ export default function ProjectModal({ project, onClose }) {
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
-          background: C.white,
+          background: "#FFFFFF",
           borderRadius: "24px 24px 0 0",
           padding: "22px 22px 52px",
           width: "100%",
           maxHeight: "82%",
           overflowY: "auto",
+          overflowX: "hidden",
+          transform: "translateZ(0)",
           position: "relative",
           animation: "slideUp 0.38s cubic-bezier(0.32,0.72,0,1) both",
+          webkitMaskImage: "-webkit-radial-gradient(white, black)",
+          clipPath: "inset(0px round 24px 24px 0px 0px)",
         }}
       >
         {/* 핸들 */}
