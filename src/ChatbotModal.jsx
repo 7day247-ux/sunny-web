@@ -363,7 +363,7 @@ export default function ChatbotModal({ onClose }) {
             }}
           >
             ✨ 포트폴리오를 끝까지 살펴봐 주셔서 감사합니다. ✨ <br />✦
-            코스맥스와 함께 성장할 기회를 기다리고 있겠습니다. ✦
+            셀리맥스와 함께 성장할 기회를 기다리고 있겠습니다. ✦
           </div>
         )}
       </div>
