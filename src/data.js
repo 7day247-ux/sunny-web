@@ -67,7 +67,7 @@ export const D = {
       {
         name: "AI & Digital Tools",
         pct: 78,
-        sub: "Figma, Midjourney, Vibe Coding, Prompt Engineering",
+        sub: "Figma, Gemini, Midjourney, Claude Vibe Coding",
         detail: "AI 바이브 코딩 레버리지 및 디지털 워크플로우 최적화",
         cat: "Digital/Ai",
       },
@@ -96,7 +96,7 @@ export const D = {
       year: "2025",
       fullTitle: "머거본 육포 라인업 패밀리룩 리뉴얼",
       desc: "육포의 근본인 '본육포' 시리즈를 중심으로, 파편화되어 있던 기존 패키지들을 하나의 통합된 비주얼 시스템으로 재정립했습니다. 브랜드 헤리티지를 유지하면서도 현대적인 감각의 패밀리룩을 구현하여 브랜드 인지도를 강화했습니다.",
-      tags: ["Package Design", "Renewal", "Visual Strategy", "Family-look"],
+      tags: ["Package Design", "Renewal", "Visual Strategy", "Family-look", "Contribution · 50%"],
     },
     {
       id: 1,
@@ -110,7 +110,7 @@ export const D = {
       year: "2025",
       fullTitle: "벨리곰 x 호두정과 3종 콜라보 패키지",
       desc: "'벨리곰' 캐릭터의 친근함과 프리미엄 호두정과의 만남을 시각화한 프로젝트. 3가지 맛의 개성을 살리면서도 캐릭터를 눈에 띄게 배치하여, 혼잡한 오프라인 매대에서 시선 점유를 유도했습니다.",
-      tags: ["Branding", "Identity", "Collaboration", "Character"],
+      tags: ["Branding", "Identity", "Collaboration", "Character", "Contribution · 100%"],
     },
     {
       id: 2,
@@ -124,7 +124,7 @@ export const D = {
       year: "2024",
       fullTitle: "신규 브랜드 캐릭터 '시즈닝몬스터' 개발",
       desc: "기존 정형화된 캐릭터에서 탈피하여, 시즈닝의 맛에 따라 입술 색이 변하는 위트 있는 설정의 '시즈닝몬스터'를 개발했습니다. 캐릭터의 특징을 패키지 전면에 녹여내어 고객에게 감성적이고 즐거운 브랜드 경험(BX)을 제공합니다.",
-      tags: ["Character", "BX", "Packaging", "Storytelling", "Monster"],
+      tags: ["Character", "BX", "Packaging", "Storytelling", "Monster", "Contribution · 100%"],
     },
     {
       id: 3,
@@ -138,7 +138,7 @@ export const D = {
       year: "2026",
       fullTitle: "벨리곰 호두정과 이커머스 상세페이지",
       desc: "디지털 환경에서 벨리곰의 매력을 극대화하여 구매 전환율을 높이는 상세페이지를 설계했습니다. 직관적인 비주얼 그리드와 데이터 기반의 워크플로우를 통해 제품의 핵심 셀링 포인트를 효과적으로 전달하는 디지털 경험을 구현했습니다.",
-      tags: ["Digital Design", "E-commerce", "UI/UX", "Visual Merchandising"],
+      tags: ["Digital Design", "E-commerce", "UI/UX", "Visual Merchandising", "Contribution · 100%"],
     },
     {
       id: 4,
@@ -153,7 +153,7 @@ export const D = {
       year: "2026",
       fullTitle: "머거본 40주년 기념 캠페인 (AI Full Production)",
       desc: "브랜드의 40년 역사와 미래 비전을 담은 광고 캠페인. 기획부터 스토리보드, 음악, 내레이션, 영상 생성까지 전 과정을 AI(Generative AI)로 제작했습니다. 최신 기술 레버리지를 통해 브랜드 헤리티지를 트렌디한 감각으로 재해석했습니다.",
-      tags: ["AI Video", "Campaign", "Creative Directing", "Future Vision"],
+      tags: ["AI Video", "Campaign", "Creative Directing", "Future Vision", "Contribution · 100%"],
     },
     {
       id: 5,
@@ -168,7 +168,7 @@ export const D = {
       year: "2026",
       fullTitle: "'너츠포유' 일상 밀착형 브랜드 필름",
       desc: "학교, 집, 직장 등 소비자의 실제 TPO(Time·Place·Occasion)에 맞춰 제작된 브랜드 필름. 평범한 일상의 순간마다 '너츠포유'가 함께한다는 메시지를 각기 다른 음악과 영상미로 표현하여 브랜드의 일상 점유율을 높이고자 했습니다.",
-      tags: ["Brand Film", "TPO Strategy", "Directing", "Music Video"],
+      tags: ["Brand Film", "TPO Strategy", "Directing", "Music Video", "Contribution · 100%"],
     },
     {
       id: 6,
@@ -182,7 +182,7 @@ export const D = {
       year: "2019",
       fullTitle: "상업용 커머셜 및 프로덕트 포토그래피",
       desc: "제품 고유의 질감과 조형미를 극대화하기 위해 빛의 각도와 반사를 정밀하게 컨트롤했습니다. 매체별 특성에 최적화된 비주얼 톤을 도출하여 제품이 가진 프리미엄 가치를 시각적으로 증명한 프로젝트입니다.",
-      tags: ["Commercial", "Lighting", "Product Photo", "Texture"],
+      tags: ["Commercial", "Lighting", "Product Photo", "Texture", "Contribution · 100%"],
     },
     {
       id: 7,
@@ -196,7 +196,7 @@ export const D = {
       year: "2020",
       fullTitle: "패션 에디토리얼: 다양성의 미학",
       desc: "프랑스 유학 시절 진행한 에디토리얼 프로젝트. 다양한 스타일의 인물을 통해 개인의 고유한 아름다움과 독창성을 포착했습니다. 사회적 편견을 넘어, 각 개인이 자신을 자유롭게 표현할 수 있는 환경에 대한 지지를 시각적 서사로 기록했습니다.",
-      tags: ["Editorial", "Fashion", "Art Direction", "Diversity", "Paris"],
+      tags: ["Editorial", "Fashion", "Art Direction", "Diversity", "Paris", "Contribution · 100%"],
     },
   ],
 
