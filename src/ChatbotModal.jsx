@@ -300,7 +300,20 @@ export default function ChatbotModal({ onClose }) {
                       lineHeight: 1.7,
                     }}
                   >
-                    {msg.text}
+                    {Array.isArray(msg.text)
+                      ? msg.text.map((para, i) => (
+                          <p
+                            key={i}
+                            style={{
+                              margin: 0,
+                              marginBottom:
+                                i < msg.text.length - 1 ? "10px" : "0",
+                            }}
+                          >
+                            {para}
+                          </p>
+                        ))
+                      : msg.text}
                   </div>
                 </div>
               )}
