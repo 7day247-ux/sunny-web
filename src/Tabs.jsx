@@ -1103,7 +1103,7 @@ export function MyPageTab() {
 
           {/* ── 피그마 링크 카드 */}
           <a
-            href="https://www.figma.com/proto/zRlcgGRqIYdhAWYsgRZN6R/DesignLab?node-id=3203-948&p=f&viewport=-775%2C-310%2C0.39&t=rvGAsCtiGoeyO5pa-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=3203%3A948&show-proto-sidebar=1&page-id=0%3A1"
+            href="https://www.figma.com/proto/nddfSqAJDhq4zjgp4K4voW/DesignLab--sunhee-?node-id=3203-948&p=f&viewport=-291%2C109%2C0.27&t=zBWKtSToenM72aUU-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=3203%3A948&show-proto-sidebar=1&page-id=0%3A1"
             target="_blank"
             rel="noopener noreferrer"
             style={{
