@@ -152,8 +152,8 @@ export const D = {
       isVideo: true,
       year: "2026",
       fullTitle: "머거본 40주년 기념 캠페인 (AI Full Production)",
-      desc: "브랜드의 40년 역사와 미래 비전을 담은 광고 캠페인. 기획부터 스토리보드, 음악, 내레이션, 영상 생성까지 전 과정을 AI(Generative AI)로 제작했습니다. 최신 기술 레버리지를 통해 브랜드 헤리티지를 트렌디한 감각으로 재해석했습니다.",
-      tags: ["AI Video", "Campaign", "Creative Directing", "Future Vision", "Contribution · 100%"],
+      desc: "브랜드의 40년 역사와 미래 비전을 담은 광고 캠페인. 기획과 스토리보드 구성부터 음악·내레이션·영상까지 전 과정을 직접 디렉팅하고, 생성형 AI(Generative AI)를 활용해 제작했습니다. 새로운 기술을 실무에 접목해, 브랜드 헤리티지를 트렌디한 감각으로 재해석했습니다.",
+      tags: ["AI Video", "Campaign", "Creative Directing", "Storyboard", "Contribution · 100%"],
     },
     {
       id: 5,
