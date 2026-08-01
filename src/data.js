@@ -192,7 +192,7 @@ export const D = {
       genre: "Commercial",
       title: "Product",
       thumbnail: "/images/thumbnail_ads_01.png",
-      img: "/images/photo_ads_00.png",
+      img: "/images/photo_ads_01.png",
       bg: "#C8C8C0",
       isVideo: false,
       year: "2019",
