@@ -154,17 +154,28 @@ export default function ProjectModal({ project, onClose }) {
           )}
         </div>
 
-        {/* 설명 */}
-        <p
+        {/* 설명 (문단 나누기 적용됨) */}
+        <div
           style={{
             fontSize: 13,
             color: "#555",
             lineHeight: 1.85,
             marginBottom: 18,
+            display: "flex",
+            flexDirection: "column",
+            gap: "12px", // 여기서 문단 사이의 간격을 조절할 수 있습니다.
           }}
         >
-          {project.desc}
-        </p>
+          {Array.isArray(project.desc) ? (
+            project.desc.map((paragraph, index) => (
+              <p key={index} style={{ margin: 0 }}>
+                {paragraph}
+              </p>
+            ))
+          ) : (
+            <p style={{ margin: 0 }}>{project.desc}</p>
+          )}
+        </div>
 
         {/* 태그 */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
