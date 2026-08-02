@@ -246,12 +246,12 @@ export default function ChatbotModal({ onClose }) {
                     {/* 말풍선 */}
                     <div
                       style={{
-                        maxWidth: "74%",
+                        maxWidth: "88%",
                         background: "#ECEAE4",
                         color: C.charcoal,
                         borderRadius: "18px 4px 18px 18px",
                         padding: "12px 14px",
-                        fontSize: 12,
+                        fontSize: 11,
                         lineHeight: 1.7,
                         textAlign: "right",
                         whiteSpace: "pre-line",
