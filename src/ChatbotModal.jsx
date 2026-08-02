@@ -251,7 +251,7 @@ export default function ChatbotModal({ onClose }) {
                         color: C.charcoal,
                         borderRadius: "18px 4px 18px 18px",
                         padding: "12px 14px",
-                        fontSize: 11,
+                        fontSize: 12,
                         lineHeight: 1.7,
                         textAlign: "right",
                         whiteSpace: "pre-line",
