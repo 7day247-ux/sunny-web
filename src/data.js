@@ -207,7 +207,7 @@ export const D = {
       id: 7,
       cat: "GRAPHIC DESIGN",
       genre: "Editorial",
-      title: "Company Profile Design",
+      title: "Company Profile",
       thumbnail: "/images/thumbnail_brochure.png",
       img: "/images/photo_brochure.png",
       bg: "#C8C8C0",
