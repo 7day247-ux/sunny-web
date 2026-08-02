@@ -190,7 +190,7 @@ export const D = {
       id: 6,
       cat: "BX",
       genre: "VMD",
-      title: "Space & Content Direction",
+      title: "Archive show room",
       thumbnail: "/images/thumbnail_archive.png",
       img: "/images/photo_archive.png",
       bg: "#C8C8C0",
