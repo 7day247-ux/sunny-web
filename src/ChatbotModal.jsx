@@ -9,12 +9,20 @@ export default function ChatbotModal({ onClose }) {
   const [messages, setMessages] = useState([]);
   const [answered, setAnswered] = useState([]);
   const bottomRef = useRef(null);
+  const lastUserMsgRef = useRef(null);
 
   const { questions, greeting } = D.chatbot;
   const { name, chatGreetImg } = D.profile;
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (lastUserMsgRef.current) {
+      lastUserMsgRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    } else {
+      bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
   }, [messages]);
 
   const handleQ = (idx) => {
@@ -22,13 +30,16 @@ export default function ChatbotModal({ onClose }) {
     const q = questions[idx];
     setMessages((prev) => [
       ...prev,
-      { type: "user", text: q.q.replace(/\n/g, " ") },
+      { type: "user", text: q.q },
       { type: "bot", text: q.a },
     ]);
     setAnswered((prev) => [...prev, idx]);
   };
 
   const remaining = questions.filter((_, i) => !answered.includes(i));
+  const lastUserIndex = messages
+    .map((m) => m.type)
+    .lastIndexOf("user");
 
   return (
     <div
@@ -182,143 +193,149 @@ export default function ChatbotModal({ onClose }) {
           </div>
 
           {/* 채팅 말풍선 */}
-          {messages.map((msg, i) => (
-            <div key={i}>
-              {msg.type === "user" ? (
-                /* ── 사용자: 오른쪽 — 아바타+레이블 위, 말풍선 아래 */
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-end",
-                    gap: 6,
-                    marginBottom: 8,
-                  }}
-                >
-                  {/* 아바타 + 레이블 */}
+          {messages.map((msg, i) => {
+            const isLastUserMsg = msg.type === "user" && i === lastUserIndex;
+
+            return (
+              <div key={i}>
+                {msg.type === "user" ? (
+                  /* ── 사용자: 오른쪽 — 아바타+레이블 위, 말풍선 아래 */
                   <div
-                    style={{ display: "flex", alignItems: "center", gap: 6 }}
-                  >
-                    <span
-                      style={{ fontSize: 11, color: C.muted, fontWeight: 600 }}
-                    >
-                      당신
-                    </span>
-                    <div
-                      style={{
-                        width: 28,
-                        height: 28,
-                        borderRadius: "50%",
-                        overflow: "hidden",
-                        flexShrink: 0,
-                      }}
-                    >
-                      <img
-                        src="/images/chatbot_you.png"
-                        alt="You"
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                          display: "block",
-                        }}
-                        onError={(e) => {
-                          e.currentTarget.style.display = "none";
-                        }}
-                      />
-                    </div>
-                  </div>
-                  {/* 말풍선 */}
-                  <div
+                    ref={isLastUserMsg ? lastUserMsgRef : null}
                     style={{
-                      maxWidth: "74%",
-                      background: "#ECEAE4",
-                      color: C.charcoal,
-                      borderRadius: "18px 4px 18px 18px",
-                      padding: "12px 14px",
-                      fontSize: 12,
-                      lineHeight: 1.7,
-                      textAlign: "right",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-end",
+                      gap: 6,
+                      marginBottom: 8,
                     }}
                   >
-                    {msg.text}
-                  </div>
-                </div>
-              ) : (
-                /* ── 봇: 왼쪽 — 아바타+레이블 위, 말풍선 아래 */
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    gap: 6,
-                    marginBottom: 8,
-                  }}
-                >
-                  {/* 아바타 + 레이블 */}
-                  <div
-                    style={{ display: "flex", alignItems: "center", gap: 6 }}
-                  >
+                    {/* 아바타 + 레이블 */}
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 6 }}
+                    >
+                      <span
+                        style={{ fontSize: 11, color: C.muted, fontWeight: 600 }}
+                      >
+                        당신
+                      </span>
+                      <div
+                        style={{
+                          width: 28,
+                          height: 28,
+                          borderRadius: "50%",
+                          overflow: "hidden",
+                          flexShrink: 0,
+                        }}
+                      >
+                        <img
+                          src="/images/chatbot_you.png"
+                          alt="You"
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            display: "block",
+                          }}
+                          onError={(e) => {
+                            e.currentTarget.style.display = "none";
+                          }}
+                        />
+                      </div>
+                    </div>
+                    {/* 말풍선 */}
                     <div
                       style={{
-                        width: 28,
-                        height: 28,
-                        borderRadius: "50%",
-                        overflow: "hidden",
-                        flexShrink: 0,
+                        maxWidth: "74%",
+                        background: "#ECEAE4",
+                        color: C.charcoal,
+                        borderRadius: "18px 4px 18px 18px",
+                        padding: "12px 14px",
+                        fontSize: 12,
+                        lineHeight: 1.7,
+                        textAlign: "right",
+                        whiteSpace: "pre-line",
                       }}
                     >
-                      <img
-                        src="/images/chatbot_memoticon_02.png"
-                        alt="Sunny"
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                          display: "block",
-                        }}
-                        onError={(e) => {
-                          e.currentTarget.style.display = "none";
-                        }}
-                      />
+                      {msg.text}
                     </div>
-                    <span
-                      style={{ fontSize: 11, color: C.muted, fontWeight: 600 }}
-                    >
-                      선희
-                    </span>
                   </div>
-                  {/* 말풍선 */}
+                ) : (
+                  /* ── 봇: 왼쪽 — 아바타+레이블 위, 말풍선 아래 */
                   <div
                     style={{
-                      maxWidth: "74%",
-                      background: C.accent,
-                      color: C.white,
-                      borderRadius: "4px 18px 18px 18px",
-                      padding: "12px 14px",
-                      fontSize: 12,
-                      lineHeight: 1.7,
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                      gap: 6,
+                      marginBottom: 8,
                     }}
                   >
-                    {Array.isArray(msg.text)
-                      ? msg.text.map((para, i) => (
-                          <p
-                            key={i}
-                            style={{
-                              margin: 0,
-                              marginBottom:
-                                i < msg.text.length - 1 ? "10px" : "0",
-                            }}
-                          >
-                            {para}
-                          </p>
-                        ))
-                      : msg.text}
+                    {/* 아바타 + 레이블 */}
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 6 }}
+                    >
+                      <div
+                        style={{
+                          width: 28,
+                          height: 28,
+                          borderRadius: "50%",
+                          overflow: "hidden",
+                          flexShrink: 0,
+                        }}
+                      >
+                        <img
+                          src="/images/chatbot_memoticon_02.png"
+                          alt="Sunny"
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            display: "block",
+                          }}
+                          onError={(e) => {
+                            e.currentTarget.style.display = "none";
+                          }}
+                        />
+                      </div>
+                      <span
+                        style={{ fontSize: 11, color: C.muted, fontWeight: 600 }}
+                      >
+                        선희
+                      </span>
+                    </div>
+                    {/* 말풍선 */}
+                    <div
+                      style={{
+                        maxWidth: "74%",
+                        background: C.accent,
+                        color: C.white,
+                        borderRadius: "4px 18px 18px 18px",
+                        padding: "12px 14px",
+                        fontSize: 12,
+                        lineHeight: 1.7,
+                      }}
+                    >
+                      {Array.isArray(msg.text)
+                        ? msg.text.map((para, i) => (
+                            <p
+                              key={i}
+                              style={{
+                                margin: 0,
+                                marginBottom:
+                                  i < msg.text.length - 1 ? "10px" : "0",
+                              }}
+                            >
+                              {para}
+                            </p>
+                          ))
+                        : msg.text}
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
-          ))}
+                )}
+              </div>
+            );
+          })}
           <div ref={bottomRef} />
         </div>
 
