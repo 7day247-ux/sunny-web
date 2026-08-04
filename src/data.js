@@ -16,7 +16,7 @@ export const D = {
   /* ── 프로필 */
   profile: {
     name: "곽선희 / Murgerbon",
-    role: "Packaging Designer",
+    role: "BX Packaging Designer",
     memojiImg: "/images/mypage_memoticon.png",
     chatMemojiImg: "/images/chatbot_online.png",
     chatGreetImg: "/images/chatbot_memoticon_01.png",
